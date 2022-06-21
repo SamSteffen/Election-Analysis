@@ -13,7 +13,7 @@ A Colorado Board of Elections employee provided the following tasks to complete 
 - Data Source: election_results.csv
 - Softwar: Python 3.7.6, Visual Studio Code Version 1.68.1
 
-##Summary
+## Summary
 The analysis of the election show that:
 - There were 369,711 total votes cast in the election.
 - The candidates were: 
