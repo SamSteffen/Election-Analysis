@@ -8,6 +8,7 @@
 #Import dependencies
 import csv
 import os
+import string
 
 #Assign a variable for the .csv file to load and the path (DIRECT)
 file_to_load = 'c:/Users/ssteffen/desktop/sam/Vanderbilt Boot Camp/MyRepo/Module 3_Python/Election-Analysis/Resources/election_results.csv'
@@ -20,37 +21,93 @@ file_to_load = 'c:/Users/ssteffen/desktop/sam/Vanderbilt Boot Camp/MyRepo/Module
 #file_to_save = os.path.join("analysis", "election_analysis.txt")
 file_to_save = 'c:/Users/ssteffen/desktop/sam/Vanderbilt Boot Camp/MyRepo/Module 3_Python/Election-Analysis/Analysis/election_analysis.txt'
 
-#use the open function to open the file as a text file
-#outfile = open(file_to_save, "w")
+#ALTERNATIVE:use the open function to open the file as a text file
+    #outfile = open(file_to_save, "w")
+    #open the election results and read the file
+    #close the file
+    #outfile.close()
 
-#open the election results and read the file
-#alternate: election_data = open(file_to_load, 'r')
-#Close the file
-#election_data.close()
+#ALTERNATIVE: election_data = open(file_to_load, 'r')
+    #Close the file
+    #election_data.close()
+
+#initialize accumulator to 0
+total_votes = 0
+
+#declare a new list for candidate names
+candidate_options = []
+
+#declare an empty dictionary to collect votes per candidate
+candidate_votes = {}
+
+#declare variables for winning_candidate, winning_count, and winning_percentage
+winning_candidate = ""
+winning_count = int(0)
+winning_percentage = float(0)
 
 #access the data
 with open(file_to_load) as election_data:
 
-    #To do: read and analyze the data here
     #create a variable that contains the csv data
     file_reader = csv.reader(election_data)
 
-#print each row in the .csv file
- #   for row in file_reader:
- #       print(row)
-
-#print the header row
+    #print the header row
     headers = next(file_reader)
-    print(headers)
 
-#write some data to the file
-#outfile.write("Hello World")
+    #print each row in the .csv file
+    for row in file_reader:
 
-#close the file
-#outfile.close()
+        #increase total_votes by 1 for each row
+        total_votes += 1
 
-#REFACTOR code to open and write using a with statement
-#with open(file_to_save, "w") as txt_file:
-    #write 3 counties to the file
-#    txt_file.write("Counties in the Election\n--------------------\nArapahoe \nDenver \nJefferson")
-  
+        #gather all the candidate names from column #3, row index [2]
+        candidate_name = row[2]
+
+        #create an if statement to see whether the candidate name is new;
+        #   if it's a new name, add the candidate to the candidate list
+        if candidate_name not in candidate_options: 
+            candidate_options.append(candidate_name)
+        
+            #begin tracking new candidate's votecounts by initializing to 0
+            candidate_votes[candidate_name] = 0
+
+        #increase candidate's votecount by one if their name appears in row[2]
+        candidate_votes[candidate_name] += 1
+    
+    #determine percentage of votes for each candidate by looping through the counts
+    #iterate through the candidate list
+    for candidate_name in candidate_votes:
+
+        #retrieve votecount of a candidate
+        votes = candidate_votes[candidate_name]
+
+        #calculate the percentage of votes
+        vote_percentage = float(votes) / float(total_votes) * 100
+
+        #print out each candidate's name, vote count and vote percentage to terminal
+        print(f'{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n')
+
+        #determine winning vote count and candidate
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+          
+        #if true, set winning_count = to votes and winning_percentage = vote_percentage
+            winning_count = votes
+            winning_percentage = vote_percentage
+    
+        #set winning candidate = to candidate's name
+            winning_candidate = candidate_name
+
+    #print out winning candidate, winning vote count and winning percentage to terminal
+    winning_candidate_summary = (
+    f"-----------------------------\n"
+    f"Winner: {winning_candidate}\n"
+    f"Winning Vote Count: {winning_count:,}\n"
+    f"Winning Percentage: {winning_percentage:1f}%\n"
+    f"-----------------------------\n")
+    print(winning_candidate_summary)
+
+    #print(total_votes)
+    #print(candidate_options)
+    #print(candidate_votes)
+    #print the candidate name and percentage of votes earned
+    #print(f"{candidate_name}: received {vote_percentage:.1f} % of the total votes.")         
