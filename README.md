@@ -93,23 +93,23 @@ Additional information about voters, candidates, precincts could only deepen our
 
 #6d. Write a print statment that prints the current candidate_county concatenation, the percentage of each county that went to each candidate and the total votes for each candidate in each county.  
     **`candidate_county_summary = (`  
-        `f"{candidate_county_name}: {cc_vote_percentage:.1f}% ({candidate_county_votecount})\n")`  
+        `f"\n{candidate_county_name}: {cc_vote_percentage:.1f}% ({candidate_county_votecount})\n")`  
       `print(candidate_county_summary)`**
    
 #6e. Write a statement that saves the print statement to the .txt file.  
     **`txt_file.write(candidate_county_summary)`**
     
 #6f. Write a decision statement that determines the candidate with the largest vote count for each county and then adds that county and its vote count to the variables created in step 2b.  
-    **`if(candidate_county_votecount > winning_candidate_county_votes)`  
+    **`if(candidate_county_votecount > winning_candidate_county_votes):`  
          `winning_candidate_county_votes = candidate_county_votes`  
          `winning_candidate_county = candidate_county_name`**
 
 #7. Write a print statement that prints out the candidate with the largest voter turnout for each county.  
     **`winning_candidate_county_summary = (`  
-         `f"------------------------\n"`  
-         `f"Winner: {winning_candidate_county}\n"`  
-         `f"Winning Vote Count: {winning_candidate_county_votes}\n"`  
-         `f"Winning Percentage: {cc_vote_percentage}\n"`  
-         `f"------------------------\n")`  
+         `f"\n------------------------\n"`  
+         `f"\nWinner: {winning_candidate_county}\n"`  
+         `f"\nWinning Vote Count: {winning_candidate_county_votes}\n"`  
+         `f"\nWinning Percentage: {cc_vote_percentage}\n"`  
+         `f"\n------------------------\n")`  
      `print(winning_candidate_county_summary)`  
      `txt_file.write(winning_candidate_county_summary)`**
