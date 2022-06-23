@@ -63,8 +63,8 @@ Additional information about voters, candidates, precincts could only deepen our
 candidate_counties = []
 ```
 ```python
-#2a. Initialize a dictionary that will hold the candidate_county concatenation as the key and the number of votes cast for that candidate   
-#within that county as the values.  
+#2a. Initialize a dictionary that will hold the candidate_county concatenation as the key and number of votes cast   
+#for each candidate within that county as the values.  
 candidate_county_votes = {}
 ```
 ```python
@@ -81,7 +81,8 @@ candidate_county_name = (f"{candidate_name}_in_{county_name}")
 #is in the candidate_county list created in step 1.     
     if candidate_county_name not in candidate_counties:
    
-        #4b. If the candidate_county concatenation is not in the list created in Step 1, add it to the list of candidate_county concatenations.  
+        #4b. If the candidate_county concatenation is not in the list created in Step 1, 
+        #add it to the list of candidate_county concatenations.  
         candidate_counties.append(candidate_county_name)
  
         #4c. Write a script that initalizes the candidate_county concatenation to zero.  
@@ -100,8 +101,8 @@ candidate_county_name = (f"{candidate_name}_in_{county_name}")
     #6c. Write a script that calculates the candidate_county votes as a percentage of the candidate_county total votes.  
     cc_vote_percentage = float(candidate_county_votecount) / float(county_vote) * 100`
 
-    #6d. Write a print statment that prints the current candidate_county concatenation, the percentage of each county that went to each candidate   
-    #and the total votes for each candidate in each county.  
+    #6d. Write a print statment that prints the current candidate_county concatenation, the percentage of each county 
+    #that went to each candidate and the total votes for each candidate in each county.  
     candidate_county_summary = (  
         f"\n{candidate_county_name}: {cc_vote_percentage:.1f}% ({candidate_county_votecount})\n")  
     print(candidate_county_summary)
