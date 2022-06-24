@@ -59,21 +59,23 @@ Based on the findings of the above election audit, it is the proposition of our 
 Additional information about voters, candidates, precincts could only deepen our analysis; but given the 3 categories of data that we have, without needing to gather more data, we could also modify our code to determine things like (1) the number of votes from each county that went to each candidate, (2) the percentage of each county that went to each candidate, (3) the declared winner of each county by vote count and vote percentage. These findings could be determined in the following manner:
 
 ```python
-#1. Initialize a candidate_county list that will hold the name of each candidate concatenated with the name of a county.  
+#1. Initialize a candidate_county list that will hold the name of each 
+#candidate concatenated with the name of a county.  
 candidate_counties = []
 ```
 ```python
-#2a. Initialize a dictionary that will hold the candidate_county concatenation as the key and number of votes cast   
-#for each candidate within that county as the values.  
+#2a. Initialize a dictionary that will hold the candidate_county concatenation 
+#as the key and number of votes cast for each candidate within that county as the values.  
 candidate_county_votes = {}
 ```
 ```python
-#2b. Initialize a variable that will hold the winning number of votes for each candidate in a particular county.  
+#2b. Initialize a variable that will hold the winning number of votes for each 
+#candidate in a particular county.   
 winning_candidate_county_votes =
 ```
 ```python
-#3. Inside the for loop, after declaring the candidate_name and county_name variables, create a new variable (using an f-string)   
-#that concatenates the candidate_name and county_name variables.  
+#3. Inside the for loop, after declaring the candidate_name and county_name variables, 
+#create a new variable (using an f-string) that concatenates the candidate_name and county_name variables.   
 candidate_county_name = (f"{candidate_name}_in_{county_name}")
 ```
 ```python
