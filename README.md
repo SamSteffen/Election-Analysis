@@ -54,9 +54,9 @@ The output report above illustrates the following:
   * Winning Percentage: 73.8%
 
 ## Election Audit Summary
-Based on the findings of the above election audit, it is the proposition of our research team that the code written to determine these outcomes in this election could be used to determine the results for any election, provided the election data is stored in a manner similar to that found in the "election_results.csv" excel file used in this project. Provided the data in future elections contains "Ballot ID," "County," and "Candidate" fields, it is estimated that our code could generate the same report for elections with any number of candidates, any number of voters and for precincts containing as many counties as is to be limited by the dataset.
+Based on the findings of the above election audit, it is the proposition of our research team that the code written to determine these outcomes in this election could be used to determine the results for any election, provided the election data is stored in a manner similar to that found in the "election_results.csv" excel file used in this project, with "Ballot ID," "County," and "Candidate" data provided in columns A, B, and C, respectively. It is estimated that our code could generate the same report for elections with any number of candidates, any number of voters and for precincts containing as many counties as is to be limited by the dataset.
 
-Additional information about voters, candidates, precincts could only deepen our analysis; but given the 3 categories of data that we have, without needing to gather more data, we could also modify our code to determine things like (1) the number of votes from each county that went to each candidate, (2) the percentage of each county that went to each candidate, (3) the declared winner of each county by vote count and vote percentage. These findings could be determined in the following manner:
+Additional information about voters, candidates, precincts could only deepen our analysis; given the 3 categories of data that we have, without needing to gather more data, we could also modify our code to determine additional findings like (1) the number of votes from each county that went to each candidate, (2) the percentage of each county that went to each candidate, (3) the declared winner of each county by vote count and vote percentage. These findings could be determined in the following manner:
 
 ```python
 #1. Initialize a candidate_county list that will hold the name of each 
@@ -71,7 +71,7 @@ candidate_county_votes = {}
 ```python
 #2b. Initialize a variable that will hold the winning number of votes for each 
 #candidate in a particular county.   
-winning_candidate_county_votes =
+winning_candidate_county_votes = 0
 ```
 ```python
 #3. Inside the for loop, after declaring the candidate_name and county_name variables, 
