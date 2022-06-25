@@ -97,20 +97,20 @@ candidate_county_name = (f"{candidate_name}_in_{county_name}")
 #6a. Write a repetition statement to get the candidate_county from the candidate_county dictionary that was created in step 2.  
     for candidate_county in candidate_county_votes:
 
-    #6b. Initialize a variable to hold the candidate_county votes as they are retrieved from the candidate_county dictionary.  
-    candidate_county_votecount = candidate_county_votes.get(candidate_county)
+        #6b. Initialize a variable to hold the candidate_county votes as they are retrieved from the candidate_county dictionary.  
+        candidate_county_votecount = candidate_county_votes.get(candidate_county)
 
-    #6c. Write a script that calculates the candidate_county votes as a percentage of the candidate_county total votes.  
-    cc_vote_percentage = float(candidate_county_votecount) / float(county_vote) * 100`
+        #6c. Write a script that calculates the candidate_county votes as a percentage of the candidate_county total votes.  
+        cc_vote_percentage = float(candidate_county_votecount) / float(county_vote) * 100`
 
-    #6d. Write a print statment that prints the current candidate_county concatenation, the percentage of each county 
-    #that went to each candidate and the total votes for each candidate in each county.  
-    candidate_county_summary = (  
-        f"\n{candidate_county_name}: {cc_vote_percentage:.1f}% ({candidate_county_votecount})\n")  
-    print(candidate_county_summary)
+        #6d. Write a print statment that prints the current candidate_county concatenation, the percentage of each county 
+        #that went to each candidate and the total votes for each candidate in each county.  
+        candidate_county_summary = (  
+            f"\n{candidate_county_name}: {cc_vote_percentage:.1f}% ({candidate_county_votecount})\n")  
+        print(candidate_county_summary)
    
-    #6e. Write a statement that saves the print statement to the .txt file.  
-    txt_file.write(candidate_county_summary)
+        #6e. Write a statement that saves the print statement to the .txt file.  
+        txt_file.write(candidate_county_summary)
 ```
 ```python
     #6f. Write a decision statement that determines the candidate with the largest vote count for each county   
