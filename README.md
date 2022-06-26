@@ -92,8 +92,8 @@ winning_districtvotes = 0
             #city_district_name index to zero.
             city_district_votes[city_district_name] = 0
 
-        #6d. Increase the count of the value established in 6c by 1
-        city_district_votes[city_district_name]=0
+        #6d. Increase the count of the value established in 6c by 1.
+        city_district_votes[city_district_name] += 1
 
     #7a.Inside the second with statement, establish a for loop that will 
     #iterate through the city_district_votes dictionary by the iterator, district.
@@ -170,8 +170,8 @@ The above modification could be further modified to account for any column of da
             #dictionary at the item_name index to zero. 
             #dict_variable_count[item_name] = 0
         
-        #6d. Increase the count of the value established in 6c by 1
-        #dict_variable_count[item_name] = 0
+        #6d. Increase the count of the value established in 6c by 1.
+        #dict_variable_count[item_name] += 1
      
     #7a. Inside the second with statement, establish a for loop that will
     #iterate through the dict_variable_count dictionary by an iterator, iterator. 
