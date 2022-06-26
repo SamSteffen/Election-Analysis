@@ -73,12 +73,14 @@ winning_districts = ""
 #4. Initialize a variable, winning_districtvotes, that will hold the number
 #of votes for the district with the most votes. Set it equal to zero.
 winning_districtvotes = 0
-
+```
+```python
         #5. Inside the first for loop, assign variable city_district_name
         #to the respective column in the dataset, as row[x], where column A = row[0]
         #column B = row[1], etc.
         city_district_name = row[x]
-        
+```
+```python
         #6a. Write a conditional statement to see whether city_district_name
         #is NOT in city_districts list created in step 1.
         if city_district_name not in city_districts:
@@ -94,7 +96,8 @@ winning_districtvotes = 0
 
         #6d. Increase the count of the value established in 6c by 1.
         city_district_votes[city_district_name] += 1
-
+```
+```python
     #7a.Inside the second with statement, establish a for loop that will 
     #iterate through the city_district_votes dictionary by the iterator, district.
     #for district in city_district_votes:
@@ -138,78 +141,81 @@ The above modification could be further modified to account for any column of da
 
 ```python
 #1. Initialize a list to collect the names of strings in column x.
-#variable_names = []
+variable_names = []
 
 #2. Initialize a dictionary that holds the items in list_x as the keys
 #and the count of the number of times they appear in the dataset as the values.
-#dict_variable_count = {}
+dict_variable_count = {}
 
 # 3. Initialize a string variable, dataset_mode, that will ultimately declare
 #the mode of the dataset, or the variable that appears the most in the dataset.
-#dataset_mode = ""
+dataset_mode = ""
 
 #4. Initialize a variable, mode_count, that will hold the number of times
 #the mode appears in the dataset. Set it equal to zero.
-# mode_count = 0
-
+mode_count = 0
+```
+```python
         #5. Inside the first for loop, assign a variable to the name of the variable
         # being collected in the list initiated in step 1.
         # Assign it to row[x], where column A = row[0], column B = row[1], etc.
-        #item_name = row[x]
-       
+        item_name = row[x]
+```
+```python
         # 6a. Write a conditional statement to see whether item_name
         # is NOT in the variable_names list created in step 1.
-        # if item_name not in variable_names: 
+        if item_name not in variable_names: 
     
             #6b. If the conditional returns "TRUE", add the item_name to
             #the variable_names list.
-            #variable_names.append(item_name)
+            variable_names.append(item_name)
             
             #6c. To begin to count the number of times items appears in the 
             #variable_names list, set the number of items in the dict_variable_count
             #dictionary at the item_name index to zero. 
-            #dict_variable_count[item_name] = 0
+            dict_variable_count[item_name] = 0
         
         #6d. Increase the count of the value established in 6c by 1.
-        #dict_variable_count[item_name] += 1
-     
+        dict_variable_count[item_name] += 1
+ ```
+ ```python
     #7a. Inside the second with statement, establish a for loop that will
     #iterate through the dict_variable_count dictionary by an iterator, iterator. 
-    #for iterator in dict_variable_count:
+    for iterator in dict_variable_count:
   
         #7b. Get the count of the values of item_count from the dictionary.
-        #item_count = dict_variable_count(iterator)
+        item_count = dict_variable_count(iterator)
        
         #7c. Determine the percentage of the total items within the dataset, 
         # using the total_votes variable as the denominator. 
-        #item_percentage =  float(item_count) / float(total_votes) * 100
+        item_percentage =  float(item_count) / float(total_votes) * 100
 
         #8a. Inside the for-loop, write a summary statement of the results.
-        #count_summary = (
-        #    f"{iterator}:{item_percentage:.1f}% ({item_count}))     
+        count_summary = (
+            f"{iterator}:{item_percentage:.1f}% ({item_count}))     
               
         #8b. Print the summary statement.
-        #print(count_summary, end ="")   
+        print(count_summary, end ="")   
        
         #8c. Save the output to the .txt file.
-        #txt_file.write(count_summary)
+        txt_file.write(count_summary)
 
     #9. Write an if statment to determine the mode of the dataset and get its count.
-    #if (item_count > dataset_mode):
-        #dataset_mode = item_count
-        #mode_name = iterator
+    if (item_count > dataset_mode):
+        dataset_mode = item_count
+        mode_name = iterator
     
     #10a. Write a summary for the mode
-    #mode_summary = (
-    #   f"\n-------------------------\n
-    #   f"\nMode: {mode_name}
-    #   f"\n-------------------------\n)
+    mode_summary = (
+       f"\n-------------------------\n
+       f"\nMode: {mode_name}
+       f"\n-------------------------\n)
     
     #10b. Print the winning district summary to the terminal.
-    #print(mode_summary)
+    print(mode_summary)
 
     #10c. Save the winning summary to the .txt file.
-    #txt_file.write(mode_summary)
+    txt_file.write(mode_summary)
 ```
 
-Additional information about voters and candidates (gender, age, race, sexual orientation, cultural heritage, political affiliation, geographic location, etc.) as well as precincts could only deepen our analysis. Given the 3 categories of data that we have, without needing to gather more, we could also modify our code to determine additional findings like (1) the number of votes from each county that went to each candidate, (2) the percentage of each county that went to each candidate, (3) the declared winner of each county by vote count and vote percentage. These findings could determined in a number of ways, either by establishing conditional statements at the beginning of our for-loops to populate new lists and dictionaries based on the criteria of a particular county or by creating a list of dictionaries to iterate through each candidate and their vote return within each county.
+Additional information about voters and candidates (gender, age, race, sexual orientation, cultural heritage, income, political affiliation, geographic location, etc.) as well as precincts could only deepen our analysis. Given the 3 categories of data that we have, without needing to gather more, we could also modify our code to determine additional findings like (1) the number of votes from each county that went to each candidate, (2) the percentage of each county that went to each candidate, (3) the declared winner of each county by vote count and vote percentage. These findings could determined in a number of ways, either by establishing conditional statements at the beginning of our for-loops to populate new lists and dictionaries based on the criteria of a particular county or by creating a list of dictionaries to iterate through each candidate and their vote return within each county.
