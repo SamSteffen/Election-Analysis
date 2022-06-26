@@ -76,7 +76,7 @@ winning_districtvotes = 0
 ```
 ```python
         #5. Inside the first for loop, assign variable city_district_name
-        #to the respective column in the dataset, as row[x], where column A = row[0]
+        #to the respective column in the dataset, as row[x], where column A = row[0],
         #column B = row[1], etc.
         city_district_name = row[x]
 ```
@@ -100,7 +100,7 @@ winning_districtvotes = 0
 ```python
     #7a.Inside the second with statement, establish a for loop that will 
     #iterate through the city_district_votes dictionary by the iterator, district.
-    #for district in city_district_votes:
+    for district in city_district_votes:
 
         #7b. Get the count of the values of district_votes from the dictionary.
         district_votes = city_district_votes.get(district)
